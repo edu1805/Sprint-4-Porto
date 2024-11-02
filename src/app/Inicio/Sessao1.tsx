@@ -1,3 +1,5 @@
+import Image from "next/image";
+import icone_intellidrive from "../../assets/imagem.svg"
 
 export default function Sessao1(){
 
@@ -7,7 +9,7 @@ export default function Sessao1(){
                 <div className="container_lado"></div>
                 <div className="container">
                     <div className="icone_intellidrive">
-                        {/* <img src="../src/assets/Image.svg" alt="icone do intellidrive" className="imagem"/> */}
+                        <Image src={icone_intellidrive} alt="icone do intellidrive" className="imagem"/>
                     </div>
                     <div className="textos">
                         <h1 className="textos_titulo">Olá, sou o bot do DriveGenius!</h1>

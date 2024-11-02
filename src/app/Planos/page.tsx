@@ -1,9 +1,12 @@
+import SessaoPlanos from "./SessaoPlanos";
 
-export default function planos(){
+
+
+export default function Planos(){
 
     return(
         <main>
-            
+            <SessaoPlanos/>
         </main>
     )
 }
