@@ -25,40 +25,53 @@
   @apply font-[var(--fonte-texto)] h-screen bg-[var(--background-page)]
 }
 
+/* Rodape */
+
+.rodape{@apply flex items-center justify-center bg-[var(--background-footer)] min-h-[120px]}
+
+.rodape a{@apply block ml-[2em]}
+
+.rodape h4{@apply text-[var(--cor-texto-cabecalho)]}
+
 /*cabecalho*/
 
-.cabecalho{
-  @apply bg-[var(--cor-fundo-cabecalho)]
+.cabecalho {
+  @apply bg-[var(--cor-fundo-cabecalho)] h-[80px] flex items-center; 
 }
 
-.cabecalho_icones{
-  @apply grid grid-cols-2
+.cabecalho_icones {
+  @apply flex w-full justify-between items-center; 
 }
 
-.links-inical{
-  @apply flex items-center ml-[1em]
+.links_inicial {
+  @apply flex items-center space-x-4; 
 }
 
-#primeiro{
-  @apply mr-[0.7em]
+.link-imagem {
+  @apply inline-flex;
 }
 
-.rotas{
-  @apply text-[#fbffff] no-underline m-[1em_1.5em] p-[1em_1.5em] hover:bg-[#191F85] hover:text-[#D0EEFF] hover:rounded-[12px]
+.imagem-simbolo {
+  @apply max-w-[80px] h-auto; 
 }
 
-.links{
-  @apply justify-self-end flex items-center
+.rotas {
+  @apply text-[#fbffff] no-underline p-[1em] hover:bg-[#191F85] hover:text-[#D0EEFF] hover:rounded-[12px];
 }
 
-.link_cabecalho{
-  @apply no-underline text-[var(--cor-texto-cabecalho)] uppercase mr-[2em]
+.links {
+  @apply flex items-center; 
 }
+
+.link_cabecalho {
+  @apply no-underline text-[var(--cor-texto-cabecalho)] uppercase mr-[2em];
+}
+
 
 /* Sessao1 */
 
 .container_vazio{
-  @apply h-full flex items-center justify-center
+  @apply h-full flex items-center justify-center p-14
 }
 
 .container_lado{
@@ -77,12 +90,12 @@
   @apply min-w-full
 }
 
-/* .textos{
-  @apply 
-} */
+.textos{
+  @apply ml-2 text-center mb-3
+}
 
 .textos_titulo {
-  @apply text-[30px] font-normal
+  @apply text-[30px] font-normal text-start
 }
 
 /* .pplanos{
@@ -97,11 +110,11 @@
 }
 
 .primeiro_sub{
-  @apply mt-[9em]
+  @apply mt-[7em]
 }
 
 .sessao2_subtitulo {
-  @apply text-[44px] font-normal
+  @apply text-[44px] font-normal text-center
 }
 
 .sessao2_container{
@@ -186,12 +199,15 @@
 
 .imagens{@apply flex}
 
-.celular{@apply mr-[1em] p-[5em]}
+.celular{@apply mr-[1em] p-2}
 
-/* .pc{@apply } */
+.pc{@apply mb-3}
 
 .texto_conforto{@apply flex justify-center items-center text-center w-[40%]}
 
 .pplanos_conforto{@apply text-[var(--cor-texto-cabecalho)] text-[20px]}
 
 .paragrafo_conforto{@apply text-[var(--cor-texto-cabecalho)] font-medium text-[40px] w-[70%]}
+
+/* Conta */
+

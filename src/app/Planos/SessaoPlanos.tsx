@@ -5,7 +5,7 @@ export default function SessaoPlanos(){
         <main>
             <div className="textos_inicial">
                 <h1 className="sessao2_subtitulo">Conheça o melhor plano para você!</h1>
-                <p>Para ter acesso ao DriveGenius, temos 3 planos para você escolher o melhor para você!</p>
+                <p className="text-center">Para ter acesso ao DriveGenius, temos 3 planos para você escolher o melhor para você!</p>
             </div>
             <section className="sessao3">
                 <div className="sessao3_planos">

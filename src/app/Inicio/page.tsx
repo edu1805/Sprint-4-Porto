@@ -1,3 +1,4 @@
+import Rodape from "@/components/Rodape";
 import Sessao1 from "./Sessao1";
 import Sessao2 from "./Sessao2";
 import Sessao3 from "./Sessao3";
@@ -11,6 +12,7 @@ export default function Inicio(){
             <Sessao2/>
             <Sessao3/>
             <Sessao4/>
+            <Rodape/>
         </main>
     )
 }
