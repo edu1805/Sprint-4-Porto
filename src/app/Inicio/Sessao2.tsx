@@ -2,7 +2,7 @@
 
 export default function Sessao2(){
     return(
-        <section>
+        <section className="mt-[5em]">
             <div className="titulo">
                 <h2 className="sessao2_subtitulo primeiro_sub">Como posso te ajudar hoje?</h2>
             </div>

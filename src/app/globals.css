@@ -2,20 +2,196 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  
+  --cor-fundo-cabecalho: #191F53;
+  --cor-texto-cabecalho: #ffffff;
+  --background-servicos: #D0EEFF;
+  --background-planos: #220058;
+  --background-footer: #000;
+  --background-page:#fbffff;
+  --fonte-texto:  "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+#root{
+  @apply font-[var(--fonte-texto)] h-screen bg-[var(--background-page)]
 }
+
+/*cabecalho*/
+
+.cabecalho{
+  @apply bg-[var(--cor-fundo-cabecalho)]
+}
+
+.cabecalho_icones{
+  @apply grid grid-cols-2
+}
+
+.links-inical{
+  @apply flex items-center ml-[1em]
+}
+
+#primeiro{
+  @apply mr-[0.7em]
+}
+
+.rotas{
+  @apply text-[#fbffff] no-underline m-[1em_1.5em] p-[1em_1.5em] hover:bg-[#191F85] hover:text-[#D0EEFF] hover:rounded-[12px]
+}
+
+.links{
+  @apply justify-self-end flex items-center
+}
+
+.link_cabecalho{
+  @apply no-underline text-[var(--cor-texto-cabecalho)] uppercase mr-[2em]
+}
+
+/* Sessao1 */
+
+.container_vazio{
+  @apply h-full flex items-center justify-center
+}
+
+.container_lado{
+  @apply w-[6em] h-[20.55em] bg-[var(--cor-fundo-cabecalho)] rounded-l-[5px]
+}
+
+.container{
+  @apply bg-gradient-to-r from-[#0B275E] to-[#D2DEF4] min-w-[35%] max-w-[50%] h-[329px] flex items-center pl-[2em] rounded-r-[5px]
+}
+
+.intellidrive{
+  @apply max-w-[40%]
+}
+
+.imagem{
+  @apply min-w-full
+}
+
+/* .textos{
+  @apply 
+} */
+
+.textos_titulo {
+  @apply text-[30px] font-normal
+}
+
+/* .pplanos{
+  @apply
+} */
+
+
+/* Sessao2 */
+
+.titulo{
+  @apply text-center
+}
+
+.primeiro_sub{
+  @apply mt-[9em]
+}
+
+.sessao2_subtitulo {
+  @apply text-[44px] font-normal
+}
+
+.sessao2_container{
+  @apply p-[5em] bg-[var(--background-servicos)] mt-[5em]
+}
+
+.sessao2_servicos{
+  @apply flex justify-around items-baseline
+}
+
+.sessao2_servicos1 .sessao2_servicos2 .sessao2_servicos3{
+  @apply w-1/4 flex flex-col text-center
+}
+
+.servicos_titulo{
+  @apply mb-[0.5em] font-semibold text-[25px]
+}
+
+/* .pplanos_servico{
+
+} */
+
+.paragrafo_servico{
+  @apply font-normal text-[20px]
+}
+
+/* Sessao3 */
+
+.sessao3_planos{
+  @apply bg-[var(--background-planos)] grid grid-cols-3 p-[4em] mt-[3em]
+}
+
+.comtexto{
+  @apply flex flex-col justify-center items-center h-full
+}
+
+.mensal, .basico, .premium{
+  @apply w-[90%] h-[70%] rounded-[19px] p-[3em]
+}
+
+.mensal{
+  @apply bg-gradient-to-b from-[#ffffff] via-[#d2d2d2] to-[#828282]
+}
+
+.titulo_plano{
+  @apply mb-[1em]
+}
+
+/* .descricao_plano{} */
+
+.textos_planos{
+  @apply h-[20%] ml-[1em]
+}
+
+.pplanos{
+  @apply text-[var(--cor-texto-cabecalho)] text-[12px] mt-[1em] w-[80%]
+}
+
+.preco{
+  @apply text-[var(--cor-texto-cabecalho)] text-[12px] mt-[1em] w-[80%]
+}
+
+.basico{
+  @apply bg-gradient-to-b from-[#ffffff] via-[#aab1f7] to-[#0017e7]
+}
+
+.premium{
+  @apply bg-gradient-to-b from-[#fffdfb] via-[#ffd6b0] to-[#ff7a00]
+}
+
+.preco3{
+  @apply w-[90%]
+}
+
+.titulo_conforto{
+  @apply text-center
+}
+
+/* Sessao4 */
+
+.div_conforto{@apply bg-[#20486C] mt-[5em] flex justify-around}
+
+.imagens{@apply flex}
+
+.celular{@apply mr-[1em] p-[5em]}
+
+/* .pc{@apply } */
+
+.texto_conforto{@apply flex justify-center items-center text-center w-[40%]}
+
+.pplanos_conforto{@apply text-[var(--cor-texto-cabecalho)] text-[20px]}
+
+.paragrafo_conforto{@apply text-[var(--cor-texto-cabecalho)] font-medium text-[40px] w-[70%]}

@@ -4,11 +4,11 @@ import icone_intellidrive from "../../assets/imagem.svg"
 export default function Sessao1(){
 
     return(
-        <section>
+        <section className="bg-[url('../assets/tecnologia_disruptiva.webp')] bg-no-repeat bg-cover h-4/5">
             <div className="container_vazio">
                 <div className="container_lado"></div>
                 <div className="container">
-                    <div className="icone_intellidrive">
+                    <div className="intellidrive">
                         <Image src={icone_intellidrive} alt="icone do intellidrive" className="imagem"/>
                     </div>
                     <div className="textos">

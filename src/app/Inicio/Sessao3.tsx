@@ -2,7 +2,7 @@
 export default function Sessao3(){
 
     return(
-        <section>
+        <section className="mt-[5em]">
             <div className="titulo">
                 <h2 className="sessao2_subtitulo">Escolha o plano que mais se encaixa com você!</h2>
             </div>

@@ -5,7 +5,7 @@ import computador from "../../assets/twemoji_laptop-computer.svg"
 export default function Sessao4(){
 
     return(
-        <section>
+        <section className="mt-[5em]">
             <div className="titulo">
                 <h2 className="sessao2_subtitulo">Seu conforto é a nossa prioridade</h2>
             </div>
