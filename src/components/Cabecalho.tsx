@@ -21,7 +21,7 @@ export default function Cabecalho(){
                 </div>
                 <div className="links flex items-center">
                     <a href="https://www.portoseguro.com.br/institucional/sobre-a-porto-seguro" className="link_cabecalho">Sobre nós</a>
-                    <Link href={"/"} className="link_cabecalho">
+                    <Link href={"/conta"} className="link_cabecalho">
                         <Image src={user} alt="Símbolo de usuário" className="user" />
                     </Link>
                 </div>

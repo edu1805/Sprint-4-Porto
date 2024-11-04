@@ -211,3 +211,10 @@
 
 /* Conta */
 
+.dados_user{@apply flex flex-col gap-[0.2em] p-[0.5em]}
+
+.visualizar{@apply flex flex-col gap-[0.5em]}
+
+.links, .apagar{@apply flex justify-between}
+
+.cadastro, .login{@apply no-underline p-[0.5em]}

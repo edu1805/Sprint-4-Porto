@@ -1,0 +1,8 @@
+{
+    "nome": "João Silva",
+    "email": "joao.silva@example.com",
+    "endereco": "Rua das Flores, 123",
+    "telefone": "(11) 98765-4321",
+    "cpf": "123.456.789-00",
+    "password": "senhaSegura123"
+}
