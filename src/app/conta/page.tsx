@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+
 export type UserData={
     nome: string,
     email: string,
@@ -28,7 +29,7 @@ export default function Conta(){
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch('../../user.json'); // URL da API para buscar os dados do usuário
+                const response = await fetch('/api/usuario'); // URL da API para buscar os dados do usuário ../api/usuario
                 if (response.ok) {
                     const data = await response.json();
                     setUser({
