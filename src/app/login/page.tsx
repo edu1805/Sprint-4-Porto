@@ -3,7 +3,7 @@
 export default function login(){
 
     return(
-        <main>
+        <main className="flex justify-center items-center min-h-[80%]">
             <div className="div_principal">
                 <div className="principal_textos">
                     <h1 className="principal_titulo">DriveGenius</h1>

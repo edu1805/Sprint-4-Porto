@@ -264,3 +264,11 @@ label {
 .div_links {
   @apply mt-[0.5em] w-[50%] flex justify-between;
 }
+
+.principal_inputs .login {
+  @apply bg-[var(--cor-fundo-cabecalho)] text-[var(--cor-texto-cabecalho)] no-underline w-[50%] p-[0.8em] rounded-[10px] text-center uppercase h-[3em];
+}
+
+.voltar {
+  @apply w-[50%] mt-[0.5em];
+}
