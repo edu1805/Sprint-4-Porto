@@ -218,3 +218,57 @@
 .links, .apagar{@apply flex justify-between}
 
 .cadastro, .login{@apply no-underline p-[0.5em]}
+
+/* Cadastro */
+
+.div_principal {
+  @apply mb-[5em];
+}
+
+.principal_textos {
+  @apply flex flex-col justify-center items-center m-[2em];
+}
+
+.principal_textos h1 {
+  @apply mb-[1em] w-[50%] text-center;
+}
+
+.principal_textos p {
+  @apply font-medium text-[20px] w-[50%] text-center;
+}
+
+.principal_inputs {
+  @apply flex items-center justify-center flex-col;
+}
+
+label {
+  @apply w-[50%] mb-[0.3em];
+}
+
+.inputs {
+  @apply w-[50%] p-[1em] rounded-[10px] mb-[1.6em];
+}
+
+.submit_botao {
+  @apply w-[50%] uppercase bg-[var(--cor-fundo-cabecalho)] text-[var(--cor-texto-cabecalho)] text-[var(--fonte-texto)] text-[16px] p-[0.8em] mb-[1em] rounded-[10px] h-[3em];
+}
+
+.link_cadastro {
+  @apply bg-[var(--cor-fundo-cabecalho)] text-[var(--cor-texto-cabecalho)] no-underline w-[50%] p-[0.8em] rounded-[10px] text-center uppercase h-[3em];
+}
+
+.link_senha {
+  @apply w-[50%];
+}
+
+.div_links {
+  @apply mt-[0.5em] w-[50%] flex justify-between;
+}
+
+.principal_inputs .login {
+  @apply bg-[var(--cor-fundo-cabecalho)] text-[var(--cor-texto-cabecalho)] no-underline w-[50%] p-[0.8em] rounded-[10px] text-center uppercase h-[3em];
+}
+
+.voltar {
+  @apply w-[50%] mt-[0.5em];
+}
