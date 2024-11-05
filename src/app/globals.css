@@ -272,3 +272,15 @@ label {
 .voltar {
   @apply w-[50%] mt-[0.5em];
 }
+
+.link_volta {
+  @apply flex w-[50%] items-center justify-center;
+}
+
+.voltar {
+  @apply ml-[1.9em];
+}
+
+.link_cadastro {
+  @apply bg-[var(--background-cabecalho)] text-[var(--cor-texto-cabecalho)] no-underline w-[50%] p-[0.8em] rounded-[10px] text-center uppercase h-[3em];
+}

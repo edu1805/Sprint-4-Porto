@@ -35,7 +35,7 @@ declare global {
   
     return (
       <>
-        <H2Conversa>Clique a direita para iniciar a conversa</H2Conversa>
+        <h2 classname = "text-black text-center text-[40px] mt-[6em]">Clique a direita para iniciar a conversa</h2>
         <div id="watson-assistant-chat" />
       </>
     );

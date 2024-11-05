@@ -2,7 +2,7 @@
 export default function Senha(){
 
     return(
-        <main>
+        <main classname = "flex justify-center min-h-[80%] items-center">
             <div className="div_principal">
                 <div className="principal_textos">
                     <p className="principal_paragrafo">Insira seu email e clique no botão para obter um link de verificação para redefinir  sua senha.</p>
