@@ -4,64 +4,52 @@ import { NextResponse } from 'next/server';
 import { promises as fs} from "fs";
 
 
-// Defina as configurações de conexão
-// const config = {
-//     user: process.env.ORACLE_DB_USER || 'rm554992',
-//     password: process.env.ORACLE_DB_PASSWORD || '280806',
-//     connectString: process.env.ORACLE_DB_CONNECTIONSTRING || 'oracle.fiap.com.br:1521/ORCL',
-// };
-
-// // Função auxiliar para obter a conexão
-// async function getOracleConnection() {
-//     return await oracledb.getConnection(config);
-// }
-
-
-// export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-//     if (req.method === 'GET') {
-//         try {
-//             const connection = await getOracleConnection();
-//             const result = await connection.execute(`SELECT * FROM Users WHERE ROWNUM = 1`); // Exemplo: obtém o primeiro usuário
-//             await connection.close();
-            
-//             if (result.rows && result.rows.length > 0) {
-//                 const user = result.rows[0];
-//                 res.status(200).json(user);
-//             } else {
-//                 res.status(404).json({ message: 'Usuário não encontrado' });
-//             }
-//         } catch (error) {
-//             console.error('Erro ao buscar dados do usuário:', error);
-//             res.status(500).json({ message: 'Erro ao buscar dados do usuário', error });
-//         }
-//     } else if (req.method === 'POST') {
-//         const { nome, email, endereco, telefone, cpf, password } = req.body;
-//         try {
-//             const connection = await getOracleConnection();
-//             const result = await connection.execute(
-//                 `INSERT INTO Users (nome, email, endereco, telefone, cpf, password) VALUES (:nome, :email, :endereco, :telefone, :cpf, :password)`,
-//                 { nome, email, endereco, telefone, cpf, password },
-//                 { autoCommit: true }
-//             );
-//             await connection.close();
-
-//             res.status(201).json({ message: 'Usuário criado com sucesso', result });
-//         } catch (error) {
-//             console.error('Erro ao criar usuário:', error);
-//             res.status(500).json({ message: 'Erro ao criar usuário', error });
-//         }
-//     } else {
-//         res.setHeader('Allow', ['GET', 'POST']);
-//         res.status(405).end(`Método ${req.method} não permitido`);
-//     }
-// }
+export async function GET(request: Request) {
+    try {
+        const response = await fetch('http://localhost:8080/Sprint2_java_war/api/usuario/localizar-todos'); 
+        if (!response.ok) {
+            throw new Error('Erro ao buscar dados dos usuários');
+        }
+        const usuarios = await response.json();
+        return NextResponse.json(usuarios);
+    } catch (error) {
+        console.error('Erro ao buscar dados dos usuários:', error);
+        return NextResponse.json({ message: 'Erro ao buscar dados dos usuários' }, { status: 500 });
+    }
+}
 
 
-export async function GET(){
+export async function POST(request: Request) {
+    try {
+        const { nome, email, endereco, telefone, cpf, password } = await request.json();
 
-    const file = await fs.readFile(process.cwd() + '/src/data/user.json','utf-8'); // ../../../data/user.json
-    const dados = JSON.parse(file);
+        const newUser = {
+            id: Number(Date.now()), // ID único baseado na data atual
+            nome,
+            email,
+            endereco,
+            telefone,
+            cpf,
+            password
+        };
 
-    return NextResponse.json(dados);
+        // Envia os dados do novo usuário para a API Java
+        const apiResponse = await fetch('http://localhost:8080/Sprint2_java_war/api/usuario/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newUser),
+        });
 
+        if (!apiResponse.ok) {
+            throw new Error('Erro ao cadastrar usuário na API');
+        }
+
+        const createdUser = await apiResponse.json();
+        return NextResponse.json(createdUser);
+    } catch (error) {
+        console.error('Erro ao criar usuário:', error);
+        return NextResponse.json({ message: 'Erro ao criar usuário', error: error}, { status: 500 });
+    }
 }

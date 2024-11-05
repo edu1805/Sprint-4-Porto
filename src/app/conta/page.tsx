@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 
 export type UserData={
+    id: string | number,
     nome: string,
     email: string,
     endereco: string,
@@ -15,6 +16,7 @@ export type UserData={
 export default function Conta(){
     
     const [user, setUser] = useState<UserData>({
+        id: '',
         nome: '',
         email: '',
         endereco: '',
@@ -29,10 +31,11 @@ export default function Conta(){
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch('/api/usuario'); // URL da API para buscar os dados do usuário ../api/usuario
+                const response = await fetch('/api/usuario'); // URL da API para buscar os dados do usuário 
                 if (response.ok) {
                     const data = await response.json();
                     setUser({
+                        id: data.id || '',
                         nome: data.nome || '',
                         email: data.email || '',
                         endereco: data.endereco || '',
@@ -60,14 +63,51 @@ export default function Conta(){
         setEditar(!editar);
     };
 
-    const deletaConta = () => {
+    const deletaConta = async (userId:number | string) => {
         const isConfirmed = window.confirm('Tem certeza que deseja deletar a conta?');
-
-        if (isConfirmed){
-            window.alert('Conta apagada');
-            window.location.href = '/cadastro'; 
-        } else{
+    
+        if (isConfirmed) {
+            try {
+                // Chamada à API para deletar o usuário
+                const response = await fetch(`/api/usuario/${userId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+    
+                if (response.ok) {
+                    window.alert('Conta apagada com sucesso');
+                    window.location.href = '/cadastro'; // Redireciona para a página de cadastro
+                } else {
+                    const errorData = await response.json();
+                    window.alert(`Erro ao apagar a conta: ${errorData.message}`);
+                }
+            } catch (error) {
+                console.error('Erro ao deletar a conta:', error);
+                window.alert('Erro ao apagar a conta. Tente novamente mais tarde.');
+            }
+        } else {
             window.alert('Ação cancelada');
+        }
+    };
+      
+
+
+    const salvarDados = async () => {
+        const response = await fetch(`/api/usuario/${1}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+
+        if (response.ok) {
+            alert('Dados atualizados com sucesso!');
+            setEditar(false);
+        } else {
+            alert('Erro ao atualizar dados.');
         }
     };
 
@@ -143,7 +183,7 @@ export default function Conta(){
                         />
                     </div>
 
-                    <button type="button" onClick={toggleEdit} className="bg-blue-500 text-white w-fit p-[0.5em] mt-[3em] rounded-[5px] mx-auto">Salvar</button>
+                    <button type="button" onClick={salvarDados} className="bg-blue-500 text-white w-fit p-[0.5em] mt-[3em] rounded-[5px] mx-auto">Salvar</button>
 
                 </form>): (
         
@@ -156,7 +196,7 @@ export default function Conta(){
                   <p><strong>Senha:</strong> {user.password ? '********' : ''}</p>
                   <div className="apagar">
                     <button onClick={toggleEdit} className="bg-blue-500 text-white w-fit p-[0.5em] mt-[3em] rounded-[5px] mx-auto">Editar</button>
-                    <button onClick={deletaConta} className="bg-blue-500 text-white w-fit p-[0.5em] mt-[3em] rounded-[5px] mx-auto">Apagar conta</button>
+                    <button onClick={() => deletaConta(user.id)} className="bg-blue-500 text-white w-fit p-[0.5em] mt-[3em] rounded-[5px] mx-auto">Apagar conta</button>
                   </div>
                 </div>)
             }
