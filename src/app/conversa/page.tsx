@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 declare global {
     interface Window {
       watsonAssistantChatOptions: {
@@ -26,16 +28,16 @@ declare global {
       // Carregando o script do Watson Assistant
       setTimeout(() => {
         const t = document.createElement('script');
-        t.src = https://web-chat.global.assistant.watson.appdomain.cloud/versions/${
+        t.src = `https://web-chat.global.assistant.watson.appdomain.cloud/versions/${
           window.watsonAssistantChatOptions.clientVersion || 'latest'
-        }/WatsonAssistantChatEntry.js;
+        }/WatsonAssistantChatEntry.js`;
         document.head.appendChild(t);
       }, 0);
     }, []);
   
     return (
       <>
-        <h2 classname = "text-black text-center text-[40px] mt-[6em]">Clique a direita para iniciar a conversa</h2>
+        <h2 className = "text-black text-center text-[40px] mt-[6em]">Clique a direita para iniciar a conversa</h2>
         <div id="watson-assistant-chat" />
       </>
     );
