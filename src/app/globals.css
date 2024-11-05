@@ -284,3 +284,169 @@ label {
 .link_cadastro {
   @apply bg-[var(--background-cabecalho)] text-[var(--cor-texto-cabecalho)] no-underline w-[50%] p-[0.8em] rounded-[10px] text-center uppercase h-[3em];
 }
+
+
+@media (max-width: 767px) {
+  .container {
+      @apply grid grid-cols-[40%_60%] p-8 min-w-[60%];
+  }
+
+  .imagem {
+      @apply min-w-full min-h-full;
+  }
+
+  .icone_intellidrive {
+      @apply min-w-full;
+  }
+
+  .textos {
+      @apply min-h-[30%] min-w-full m-0 p-0;
+  }
+
+  .textos_titulo {
+      @apply w-full ml-4 text-[18px];
+  }
+
+  .paragrafo {
+    @apply w-full my-4 ml-4 text-[15px];
+}
+
+.sessao2_subtitulo {
+    @apply mt-16; /* 4em */
+}
+
+.servicos_titulo {
+    @apply text-[18px];
+}
+
+.paragrafo_servico {
+    @apply text-[15px];
+}
+
+.sessao2_servicos1, 
+.sessao2_servicos2, 
+.sessao2_servicos3 {
+    @apply w-[30%] flex flex-col text-center;
+}
+
+.sessao2_container {
+    @apply p-4; /* 1em */
+}
+
+.sessao2_servicos {
+    @apply flex justify-between items-baseline;
+}
+
+.sessao2_subtitulo {
+    @apply w-[80%] text-[32px] font-medium; /* font-weight: 500 */
+}
+
+.titulo_plano {
+    @apply text-[16px];
+}
+
+.descricao_plano {
+    @apply text-[14px];
+}
+
+ .sessao3_planos {
+    @apply grid grid-cols-3 p-8; /* 2em */
+} */
+
+.basico, 
+.mensal, 
+.premium {
+    @apply w-[80%] h-[20%];
+}
+
+.pplanos, 
+.preco {
+    @apply text-var(--cor-texto-cabecalho) text-[12px] mt-8 w-[90%];
+}
+
+.preco3 {
+    @apply w-[90%] mt-7.5; /* 1.8em */
+}
+
+}
+
+@media screen and (max-width: 590px) {
+
+  .container {
+      @apply p-2; /* 0.5em */
+  }
+
+  .container h1 {
+      @apply text-[20px] font-normal self-end; /* font-weight: 400 */
+  }
+
+  .container p {
+      @apply text-[14px];
+  }
+
+  .sessao3_planos {
+      @apply flex flex-col;
+  }
+
+  .basico, 
+  .mensal, 
+  .premium {
+      @apply min-w-[90%] h-[10em];
+  }
+
+  .comtexto {
+      @apply text-center;
+  }
+
+  .preco {
+      @apply mb-4 text-center; /* margin-bottom: 1em */
+  }
+}
+
+@media screen and (max-width: 660px) {
+
+  .sobre {
+      @apply hidden;
+  }
+
+  .submit_botao {
+      @apply text-[12px]; /* Alterando o font-size para 12px */
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .sessao3_planos {
+      @apply flex flex-col; /* Altera o layout para flex e direção de coluna */
+  }
+
+  .preco {
+      @apply mb-4 text-center; /* Margem inferior de 1em e centraliza o texto */
+  }
+}
+
+@media screen and (max-width: 662px) {
+
+  .sobre {
+      @apply hidden; /* Esconde o elemento */
+  }
+
+  .fundo {
+      @apply w-1/2 text-center; /* Largura de 50% e centraliza o texto */
+  }
+
+  .link_cabecalho {
+      @apply m-0; /* Remove a margem */
+  }
+
+  .cabecalho {
+      @apply min-w-screen; /* Define a largura mínima para 100vw */
+  }
+}
+
+@media screen and (max-width: 657px) {
+  .sobre {
+      @apply hidden; /* Esconde o elemento */
+  }
+}
+
