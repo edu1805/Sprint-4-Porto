@@ -16,7 +16,7 @@ export default function Cabecalho(){
                     <div className="flex space-x-4">
                         <Link href={"/"} className="rotas">Página inicial</Link>
                         <Link href={"/planos"} className="rotas">Planos</Link>
-                        <Link href={"/"} className="rotas">Conversar</Link>
+                        <Link href={"/conversa"} className="rotas">Conversar</Link>
                     </div>
                 </div>
                 <div className="links flex items-center">
